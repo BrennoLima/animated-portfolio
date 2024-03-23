@@ -1,13 +1,14 @@
 import { useMemo, useEffect, useState } from 'react';
-import { createTheme, Button, IconButton, ThemeProvider } from '@mui/material';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import { createTheme, Box, ThemeProvider } from '@mui/material';
 
+import { Navbar } from './components/Navbar';
+import { Landing } from './components/Landing';
 import { lightTheme } from './theme/light';
 import { darkTheme } from './theme/dark';
 
 function App() {
-	const [mode, setMode] = useState('dark');
+	const [page, setPage] = useState('landing');
+	const [mode, setMode] = useState('light');
 	const theme = useMemo(
 		() => createTheme(mode === 'light' ? lightTheme : darkTheme),
 		[mode]
@@ -27,27 +28,28 @@ function App() {
 			setMode(localStorage.getItem('theme-mode'));
 		}
 	}, []);
+
 	return (
-		<div className='App'>
-			<ThemeProvider theme={theme}>
-				<IconButton
-					onClick={toggleMode}
-					sx={{
-						zIndex: 100,
-						position: 'fixed',
-						top: 16,
-						right: 16,
-						transition: '0.2s color ease-in',
-						'&:hover': {
-							color: (theme) => theme.palette.text.primary,
-						},
-					}}
-					id='mode-switcher'
-				>
-					{mode === 'dark' ? <DarkModeIcon /> : <LightModeIcon />}
-				</IconButton>
-			</ThemeProvider>
-		</div>
+		<ThemeProvider theme={theme}>
+			<Box
+				className='App'
+				sx={{
+					background: (theme) =>
+						`radial-gradient(${theme.palette.secondary.light}, ${theme.palette.secondary.main})`,
+					overflow: 'hidden',
+					height: '100vh',
+					position: 'relative',
+				}}
+			>
+				<Navbar
+					page={page}
+					setPage={setPage}
+					mode={mode}
+					toggleMode={toggleMode}
+				/>
+				<Landing page={page} setPage={setPage} />
+			</Box>
+		</ThemeProvider>
 	);
 }
 
