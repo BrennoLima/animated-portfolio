@@ -13,7 +13,7 @@ export const lightTheme = createTheme({
 		},
 		text: {
 			primary: '#B3ADDA',
-			secondary: '#FFF',
+			secondary: '#DCD6FF',
 		},
 	},
 	typography: {

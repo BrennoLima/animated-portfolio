@@ -7,6 +7,7 @@ import { LandingBlob } from '../SVGComponents/LandingBlob';
 import { BrennoSVG } from '../SVGComponents/BrennoSVG';
 import { FloatingMenu } from './FloatingMenu';
 import { About } from './About';
+import { Education } from './Education';
 
 export const Landing = ({ page, setPage }) => {
 	useEffect(() => {
@@ -60,7 +61,7 @@ export const Landing = ({ page, setPage }) => {
 						}}
 					>
 						<Typography
-							color='text.primary'
+							color='text.secondary'
 							fontWeight='700'
 							variant='h4'
 							sx={{ mr: 2 }}
@@ -73,7 +74,7 @@ export const Landing = ({ page, setPage }) => {
 					</Box>
 
 					<Typography
-						color='text.primary'
+						color='text.secondary'
 						align='center'
 						fontWeight='700'
 						variant='h6'
@@ -110,6 +111,7 @@ export const Landing = ({ page, setPage }) => {
 				id='new-page'
 			>
 				{page === 'about' && <About />}
+				{page === 'education' && <Education />}
 			</Box>
 		</Container>
 	);
