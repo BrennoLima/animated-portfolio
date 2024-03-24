@@ -1,11 +1,26 @@
-import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Container, IconButton, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 import { TorontoSVG } from '../SVGComponents/TorontoSVG';
 import { ResumeSVG } from '../SVGComponents/ResumeSVG';
 
 export const About = () => {
+	const [activeChat, setActiveChat] = useState(0);
+	const ALL_CHATS = [
+		'Nice to meet you! I am Brenno Lima, a frontend web developer.',
+		'Later on I will write something here',
+		'but now, I wanna code this website',
+	];
+
+	const handleChat = () => {
+		if (activeChat < ALL_CHATS.length - 1) {
+			return setActiveChat((prev) => prev + 1);
+		}
+		return setActiveChat(0);
+	};
+
 	return (
 		<Container maxWidth='lg'>
 			<Typography
@@ -35,36 +50,10 @@ export const About = () => {
 			</Box>
 			<Box
 				sx={{
-					position: 'absolute',
-					right: 0,
-					bottom: '20vh',
-					height: '20vh',
-				}}
-			>
-				<Box sx={{ display: 'inline-block', textAlign: 'center' }}>
-					<Box style={{ height: '15vh' }}>
-						<ResumeSVG />
-					</Box>
-
-					<Typography
-						color='text.primary'
-						variant='h6'
-						sx={{
-							mt: 2,
-							display: 'flex',
-							alignItems: 'center',
-						}}
-					>
-						<DownloadIcon sx={{ mr: 1 }} /> Resume
-					</Typography>
-				</Box>
-			</Box>
-			<Box
-				sx={{
 					height: '35vh',
 					width: '40%',
 					position: 'absolute',
-					top: '8vh',
+					top: 0,
 					left: '55%',
 				}}
 			>
@@ -79,11 +68,18 @@ export const About = () => {
 						display: 'flex',
 						alignItems: 'center',
 						justifyContent: 'center',
+						position: 'relative',
 					}}
 				>
 					<Typography align='center' variant='h6'>
-						Nice to meet you! I am Brenno Lima, a frontend web developer.
+						{ALL_CHATS[activeChat]}
 					</Typography>
+					<IconButton
+						onClick={handleChat}
+						sx={{ position: 'absolute', bottom: 10, right: 10 }}
+					>
+						<MoreHorizIcon />
+					</IconButton>
 				</Box>
 				<Box
 					sx={{
@@ -107,6 +103,32 @@ export const About = () => {
 						ml: 2,
 					}}
 				/>
+			</Box>
+			<Box
+				sx={{
+					position: 'absolute',
+					right: '5vw',
+					bottom: '20vh',
+					height: '20vh',
+				}}
+			>
+				<Box sx={{ display: 'inline-block', textAlign: 'center' }}>
+					<Box style={{ height: '15vh' }}>
+						<ResumeSVG />
+					</Box>
+
+					<Typography
+						color='text.primary'
+						variant='h6'
+						sx={{
+							mt: 2,
+							display: 'flex',
+							alignItems: 'center',
+						}}
+					>
+						<DownloadIcon sx={{ mr: 1 }} /> Resume
+					</Typography>
+				</Box>
 			</Box>
 		</Container>
 	);

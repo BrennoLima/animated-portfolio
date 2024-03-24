@@ -66,7 +66,7 @@ export const FloatingMenu = ({ setPage }) => {
 				className='floating-item'
 				onClick={() => setPage('skills')}
 				id='span-skills'
-				sx={{ ...commonStyles, height: '20vh', bottom: '6%', left: 0 }}
+				sx={{ ...commonStyles, height: '20vh', bottom: '10%', left: 0 }}
 			>
 				<SkillsSVG />
 			</Box>
@@ -82,7 +82,7 @@ export const FloatingMenu = ({ setPage }) => {
 				className='floating-item'
 				onClick={() => setPage('contact')}
 				id='span-contact'
-				sx={{ ...commonStyles, height: '15vh', top: '20%', left: '20%' }}
+				sx={{ ...commonStyles, height: '15vh', bottom: '70%', left: '20%' }}
 			>
 				<ContactSVG />
 			</Box>
@@ -90,7 +90,7 @@ export const FloatingMenu = ({ setPage }) => {
 				className='floating-item'
 				onClick={() => setPage('projects')}
 				id='span-projects'
-				sx={{ ...commonStyles, height: '20vh', top: '15%', right: '20%' }}
+				sx={{ ...commonStyles, height: '20vh', bottom: '70%', right: '20%' }}
 			>
 				<ProjectsSVG />
 			</Box>
@@ -106,7 +106,7 @@ export const FloatingMenu = ({ setPage }) => {
 				className='floating-item'
 				onClick={() => setPage('about')}
 				id='span-about'
-				sx={{ ...commonStyles, height: '20vh', bottom: '6%', right: '0' }}
+				sx={{ ...commonStyles, height: '20vh', bottom: '10%', right: '0' }}
 			>
 				<AboutSVG />
 			</Box>

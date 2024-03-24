@@ -5,6 +5,7 @@ export const lightTheme = createTheme({
 		mode: 'light',
 		primary: {
 			main: '#FFAD0E',
+			dark: '#8D671D',
 		},
 		secondary: {
 			main: '#413876',
@@ -12,6 +13,7 @@ export const lightTheme = createTheme({
 		},
 		text: {
 			primary: '#B3ADDA',
+			secondary: '#FFF',
 		},
 	},
 	typography: {

@@ -7,6 +7,15 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { LogoSVG } from '../SVGComponents/LogoSVG';
 
 export const Navbar = ({ page, setPage, toggleMode, mode }) => {
+	const navItems = [
+		'About',
+		'Education',
+		'Skills',
+		'Work',
+		'Projects',
+		'Contact',
+	];
+
 	return (
 		<Box
 			sx={{
@@ -27,7 +36,7 @@ export const Navbar = ({ page, setPage, toggleMode, mode }) => {
 					justifyContent: 'space-between',
 				}}
 			>
-				<Grid item sx={{ padding: '0 2rem' }}>
+				<Grid item>
 					<IconButton
 						onClick={() => setPage('landing')}
 						sx={{ width: '50px', height: '50px', p: 0, m: 0 }}
@@ -35,85 +44,31 @@ export const Navbar = ({ page, setPage, toggleMode, mode }) => {
 						<LogoSVG />
 					</IconButton>
 				</Grid>
-				<Grid item sx={{ padding: '0 2rem' }}>
-					<Button
-						onClick={() => setPage('about')}
-						sx={{
-							textTransform: 'none',
-							color: page === 'about' ? '#FFF' : '#B3ADDA',
-							'&:hover': {
-								color: '#FFFFFF',
-							},
-						}}
-					>
-						About
-					</Button>
-					<Button
-						sx={{
-							textTransform: 'none',
-							color: page === 'education' ? '#FFF' : '#B3ADDA',
-							'&:hover': {
-								color: '#FFFFFF',
-							},
-						}}
-						onClick={() => setPage('education')}
-					>
-						Education
-					</Button>
-					<Button
-						sx={{
-							textTransform: 'none',
-							color: page === 'skills' ? '#FFF' : '#B3ADDA',
-							'&:hover': {
-								color: '#FFFFFF',
-							},
-						}}
-						onClick={() => setPage('skills')}
-					>
-						Skills
-					</Button>
-					<Button
-						sx={{
-							textTransform: 'none',
-							color: page === 'work' ? '#FFF' : '#B3ADDA',
-							'&:hover': {
-								color: '#FFFFFF',
-							},
-						}}
-						onClick={() => setPage('work')}
-					>
-						Work
-					</Button>
-					<Button
-						sx={{
-							textTransform: 'none',
-							color: page === 'projects' ? '#FFF' : '#B3ADDA',
-							'&:hover': {
-								color: '#FFFFFF',
-							},
-						}}
-						onClick={() => setPage('projects')}
-					>
-						Projects
-					</Button>
-					<Button
-						sx={{
-							textTransform: 'none',
-							color: page === 'contact' ? '#FFF' : '#B3ADDA',
-							'&:hover': {
-								color: '#FFFFFF',
-							},
-						}}
-						onClick={() => setPage('contact')}
-					>
-						Contact
-					</Button>
+				<Grid item>
+					{navItems.map((navItem) => (
+						<Button
+							onClick={() => setPage(navItem.toLowerCase())}
+							sx={{
+								textTransform: 'none',
+								color: (theme) => {
+									if (page === navItem.toLowerCase())
+										return theme.palette.primary.main;
+									return theme.palette.text.primary;
+								},
+								'&:hover': {
+									color: (theme) => theme.palette.primary.main,
+								},
+							}}
+						>
+							{navItem}
+						</Button>
+					))}
 				</Grid>
 				<Grid item>
 					<IconButton
 						onClick={toggleMode}
 						sx={{
-							color: (theme) => theme.palette.primary.main,
+							color: (theme) => theme.palette.text.secondary,
 							transition: '0.2s color ease-in',
 						}}
 						id='mode-switcher'

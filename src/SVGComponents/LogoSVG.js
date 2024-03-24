@@ -1,6 +1,8 @@
+import { useTheme } from '@emotion/react';
 import React from 'react';
 
 export const LogoSVG = () => {
+	const theme = useTheme();
 	return (
 		<svg
 			width='65'
@@ -16,7 +18,7 @@ export const LogoSVG = () => {
 					fillRule='evenodd'
 					clipRule='evenodd'
 					d='M33.1236 5C43.0487 5 48 15.5482 48 25.35C48 33.7327 41.6119 41 33.1236 41C23.1206 41 13 35.2286 13 25.35C13 14.2418 21.8756 5 33.1236 5Z'
-					fill='#D4CEF8'
+					fill={theme.palette.text.primary}
 					fillOpacity='0.2'
 				/>
 				<path
