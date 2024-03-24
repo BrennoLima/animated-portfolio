@@ -15,6 +15,9 @@ export const darkTheme = createTheme({
 			primary: '#bbbbbb',
 			secondary: '#FFF',
 		},
+		background: {
+			paper: '#212121',
+		},
 	},
 	typography: {
 		fontFamily: "'Poppins', 'sans-serif'",

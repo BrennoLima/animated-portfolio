@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Container, IconButton, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import gsap from 'gsap';
 
 import { TorontoSVG } from '../SVGComponents/TorontoSVG';
 import { ResumeSVG } from '../SVGComponents/ResumeSVG';
@@ -20,6 +21,23 @@ export const About = () => {
 		}
 		return setActiveChat(0);
 	};
+
+	useEffect(() => {
+		const float = gsap.fromTo(
+			'#resume',
+			{ y: '+=5px' },
+			{
+				y: '-=25px',
+				yoyo: true,
+				repeat: -1,
+				ease: 'Power2.easeInOut',
+				duration: 2,
+			}
+		);
+		return () => {
+			float.kill();
+		};
+	}, []);
 
 	return (
 		<Container maxWidth='lg'>
@@ -112,16 +130,15 @@ export const About = () => {
 					height: '20vh',
 				}}
 			>
-				<Box sx={{ display: 'inline-block', textAlign: 'center' }}>
+				<Box sx={{ display: 'inline-block', textAlign: 'center' }} id='resume'>
 					<Box style={{ height: '15vh' }}>
 						<ResumeSVG />
 					</Box>
-
 					<Typography
 						color='text.primary'
 						variant='h6'
 						sx={{
-							mt: 2,
+							mt: 1,
 							display: 'flex',
 							alignItems: 'center',
 						}}

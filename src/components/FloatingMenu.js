@@ -21,43 +21,35 @@ const commonStyles = {
 };
 
 export const FloatingMenu = ({ setPage }) => {
-	let float;
-
-	const animateItem = (item, delay) => {
-		float = gsap.fromTo(
-			`#span-${item}`,
-			{ y: '+=5px' },
-			{
-				delay: delay,
-				y: '-=25px',
-				yoyo: true,
-				repeat: -1,
-				ease: 'Power2.easeInOut',
-				duration: 2,
-			}
-		);
-	};
-
-	const initiate = () => {
-		let delay = 0;
-		['skills', 'work', 'contact', 'projects', 'education', 'about'].map(
-			(item) => {
-				delay += 0.4;
-				return animateItem(item, delay);
-			}
-		);
-	};
-
-	const terminate = () => {
-		float.kill();
-	};
-
 	useEffect(() => {
+		let float;
+		const animateItem = (item, delay) => {
+			float = gsap.fromTo(
+				`#span-${item}`,
+				{ y: '+=5px' },
+				{
+					delay: delay,
+					y: '-=25px',
+					yoyo: true,
+					repeat: -1,
+					ease: 'Power2.easeInOut',
+					duration: 2,
+				}
+			);
+		};
+		const initiate = () => {
+			let delay = 0;
+			['skills', 'work', 'contact', 'projects', 'education', 'about'].map(
+				(item) => {
+					delay += 0.4;
+					return animateItem(item, delay);
+				}
+			);
+		};
 		initiate();
 		return () => {
-			terminate();
+			float.kill();
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
