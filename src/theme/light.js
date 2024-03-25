@@ -15,6 +15,9 @@ export const lightTheme = createTheme({
 			primary: '#B3ADDA',
 			secondary: '#DCD6FF',
 		},
+		background: {
+			paper: '#f5f3ff',
+		},
 	},
 	typography: {
 		fontFamily: "'Poppins', 'sans-serif'",
