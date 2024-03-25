@@ -8,6 +8,7 @@ import { BrennoSVG } from '../SVGComponents/BrennoSVG';
 import { FloatingMenu } from './FloatingMenu';
 import { About } from './About';
 import { Education } from './Education';
+import { Skills } from './Skills';
 
 export const Landing = ({ page, setPage }) => {
 	useEffect(() => {
@@ -112,6 +113,7 @@ export const Landing = ({ page, setPage }) => {
 			>
 				{page === 'about' && <About />}
 				{page === 'education' && <Education />}
+				{page === 'skills' && <Skills />}
 			</Box>
 		</Container>
 	);

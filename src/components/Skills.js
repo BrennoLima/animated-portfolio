@@ -5,6 +5,7 @@ import {
 	Container,
 	Collapse,
 	Divider,
+	Grid,
 	IconButton,
 	Stack,
 	Typography,
@@ -12,11 +13,9 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import gsap from 'gsap';
 
-import Seneca from '../assets/SVGs/Seneca.svg';
-import Unb from '../assets/SVGs/Unb.svg';
-import { SchoolSVG } from '../SVGComponents/SchoolSVG';
+import Figma from '../assets/SVGs/Figma.svg';
 
-export const Education = () => {
+export const Skills = () => {
 	const [expanded, setExpanded] = React.useState(false);
 
 	const handleExpandClick = () => {
@@ -58,13 +57,12 @@ export const Education = () => {
 					my: 8,
 				}}
 			>
-				EDUCATION
+				SKILLS
 			</Typography>
-			<SchoolSVG height='25vh' />
 			<Card
 				sx={{
 					position: 'absolute',
-					right: '20%',
+					right: '0',
 					top: '0',
 					borderRadius: 1,
 					width: '250px',
@@ -74,20 +72,92 @@ export const Education = () => {
 				id='float-0'
 			>
 				<Stack sx={{ alignItems: 'center' }}>
-					<img src={Seneca} alt='Seneca-College' width={140} height={70} />
+					<Box
+						sx={{
+							width: '100%',
+							background: '#1E1E1E',
+							display: 'flex',
+							justifyContent: 'center',
+							py: 1,
+						}}
+					>
+						<img src={Figma} alt='figma' />
+					</Box>
 					<Divider flexItem />
-					<Box sx={{ p: 1 }}>
+					<Box sx={{ py: 1 }}>
 						<Typography align='center' variant='subtitle1' fontWeight={600}>
-							Seneca College (2019)
-						</Typography>
-						<Typography align='center' variant='body2'>
-							Computer Programmer
+							UI/UX Design
 						</Typography>
 					</Box>
-					<Collapse in={expanded} timeout='auto' unmountOnExit>
-						<Typography align='center' variant='caption'>
-							Graduation with honours
+				</Stack>
+			</Card>
+
+			<Card
+				sx={{
+					position: 'absolute',
+					left: '0',
+					bottom: '20vh',
+					borderRadius: 1,
+					width: '250px',
+					color: (theme) =>
+						theme.palette.getContrastText(theme.palette.background.paper),
+				}}
+				id='float-1'
+			>
+				<Stack sx={{ alignItems: 'center' }}>
+					<Box
+						sx={{
+							width: '100%',
+							background: '#1E1E1E',
+							display: 'flex',
+							justifyContent: 'center',
+							py: 1,
+						}}
+					>
+						<img src={Figma} alt='figma' />
+					</Box>
+					<Divider flexItem />
+					<Box sx={{ pt: 1 }}>
+						<Typography align='center' variant='subtitle1' fontWeight={600}>
+							Frontend Development
 						</Typography>
+					</Box>
+					<Collapse
+						in={expanded}
+						timeout='auto'
+						unmountOnExit
+						sx={{ width: '100%' }}
+					>
+						<Grid
+							container
+							direction='row'
+							alignItems='center'
+							justifyContent='space-around'
+							sx={{
+								py: 2,
+								px: 2,
+							}}
+							gap={3}
+						>
+							<Grid item>
+								<Typography variant='caption'>React</Typography>
+							</Grid>
+							<Grid item>
+								<Typography variant='caption'>Redux</Typography>
+							</Grid>
+							<Grid item>
+								<Typography variant='caption'>Material UI</Typography>
+							</Grid>
+							<Grid item>
+								<Typography variant='caption'>React</Typography>
+							</Grid>
+							<Grid item>
+								<Typography variant='caption'>Redux</Typography>
+							</Grid>
+							<Grid item>
+								<Typography variant='caption'>Material UI</Typography>
+							</Grid>
+						</Grid>
 					</Collapse>
 					<IconButton
 						size='small'
@@ -101,34 +171,6 @@ export const Education = () => {
 					>
 						<ExpandMoreIcon />
 					</IconButton>
-				</Stack>
-			</Card>
-
-			<Card
-				sx={{
-					position: 'absolute',
-					right: '0',
-					bottom: '20vh',
-					borderRadius: 1,
-					width: '250px',
-					color: (theme) =>
-						theme.palette.getContrastText(theme.palette.background.paper),
-				}}
-				id='float-1'
-			>
-				<Stack sx={{ alignItems: 'center' }}>
-					<Box sx={{ py: 2 }}>
-						<img src={Unb} alt='Unb' width={140} height={70} />
-					</Box>
-					<Divider flexItem />
-					<Box sx={{ p: 1 }}>
-						<Typography align='center' variant='subtitle1' fontWeight={600}>
-							Universty of Brasilia (2017)
-						</Typography>
-						<Typography align='center' variant='body2'>
-							Computer Science
-						</Typography>
-					</Box>
 				</Stack>
 			</Card>
 		</Container>
