@@ -76,7 +76,7 @@ export const Education = () => {
 				<Stack sx={{ alignItems: 'center' }}>
 					<img src={Seneca} alt='Seneca-College' width={140} height={70} />
 					<Divider flexItem />
-					<Box sx={{ p: 1 }}>
+					<Box sx={{ pt: 1 }}>
 						<Typography align='center' variant='subtitle1' fontWeight={600}>
 							Seneca College (2019)
 						</Typography>

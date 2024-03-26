@@ -138,7 +138,7 @@ export const Skills = () => {
 			<Card
 				sx={{
 					position: 'absolute',
-					right: '10%',
+					right: '5%',
 					top: '5%',
 					borderRadius: 1,
 					width: '250px',
@@ -227,8 +227,8 @@ export const Skills = () => {
 			<Card
 				sx={{
 					position: 'absolute',
-					right: '0',
-					bottom: '10vh',
+					right: '-5%',
+					bottom: '15%',
 					borderRadius: 1,
 					width: '250px',
 					color: (theme) =>
@@ -287,13 +287,6 @@ export const Skills = () => {
 								<Typography variant='caption'>Postman</Typography>
 							</Grid>
 						</Grid>
-						<Box
-							sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-						>
-							<Typography variant='caption'>
-								4+ year working experience
-							</Typography>
-						</Box>
 					</Collapse>
 					<IconButton
 						size='small'
