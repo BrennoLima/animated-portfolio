@@ -94,21 +94,21 @@ export const Work = () => {
 					<AccordionDetails>
 						<Stack gap={2}>
 							<Typography variant='body2'>
-								• Developed and maintained web applications using JavaScript,
-								TypeScript, React, and Velocity
+								• Developed and maintained web applications using{' '}
+								<b>JavaScript, TypeScript, React</b>, and Velocity
 							</Typography>
 							<Typography variant='body2'>
-								• Debug, test, and review code PRs
+								• <b>Debug, test</b>, and <b>review</b> code PRs
 							</Typography>
 							<Typography variant='body2'>
 								• Collaborate with other developers and teams to ensure the
 								project success
 							</Typography>
 							<Typography variant='body2'>
-								• Designed pages and components on Figma
+								• <b>Designed</b> pages and components on <b>Figma</b>
 							</Typography>
 							<Typography variant='body2'>
-								• Ensure that user interfaces are user-friendly, easy to
+								• Ensure that <b>user interfaces</b> are user-friendly, easy to
 								navigate, and visually appealing
 							</Typography>
 						</Stack>
@@ -140,11 +140,11 @@ export const Work = () => {
 					<AccordionDetails>
 						<Stack gap={2}>
 							<Typography variant='body2'>
-								• Developed and maintained the frontend application using
-								JavaScript, React, Redux
+								• Developed and maintained the <b>frontend</b> application using
+								<b>JavaScript, React, Redux</b>
 							</Typography>
 							<Typography variant='body2'>
-								• Designed pages and components on Figma
+								• <b>Designed</b> pages and components on <b>Figma</b>
 							</Typography>
 							<Typography variant='body2'>
 								• Managed co-op interns, assigning small tasks and doing code
@@ -177,16 +177,16 @@ export const Work = () => {
 					<AccordionDetails>
 						<Stack gap={2}>
 							<Typography variant='body2'>
-								• Developed and performed manual and automated tests cases for
-								quality assurance.
+								• Developed and performed <b>manual and automated tests</b>{' '}
+								cases for quality assurance.
 							</Typography>
 							<Typography variant='body2'>
-								• Collaborated with developers to identify and fix root-cause
-								bugs.
+								• Collaborated with developers to <b>identify and fix</b>{' '}
+								root-cause bugs.
 							</Typography>
 							<Typography variant='body2'>
-								• Troubleshoot, debug, and upgrade existing software to meet
-								client needs.
+								• <b>Troubleshoot, debug</b>, and upgrade existing software to
+								meet client needs.
 							</Typography>
 						</Stack>
 					</AccordionDetails>
