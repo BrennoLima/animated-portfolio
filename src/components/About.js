@@ -54,7 +54,7 @@ export const About = () => {
 			</Typography>
 			<Box sx={{ mt: 8 }}>
 				<Box sx={{ display: 'inline-block', textAlign: 'center' }}>
-					<TorontoSVG height='25vh' />
+					<TorontoSVG width='12vw' />
 					<Typography
 						color='text.primary'
 						variant='h6'

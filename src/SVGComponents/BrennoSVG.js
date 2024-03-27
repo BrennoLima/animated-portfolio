@@ -1,14 +1,14 @@
 import { useTheme } from '@emotion/react';
 import React from 'react';
 
-export const BrennoSVG = () => {
+export const BrennoSVG = (width) => {
 	const theme = useTheme();
 	return (
 		<svg
 			viewBox='0 0 372 448'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'
-			height='100%'
+			width={width}
 			preserveAspectRatio='xMidYMid meet'
 		>
 			<g id='Brenno'>
