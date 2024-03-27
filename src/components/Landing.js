@@ -10,6 +10,8 @@ import { About } from './About';
 import { Education } from './Education';
 import { Skills } from './Skills';
 import { Work } from './Work';
+import { Projects } from './Projects';
+import { Contact } from './Contact';
 
 export const Landing = ({ page, setPage }) => {
 	useEffect(() => {
@@ -116,6 +118,8 @@ export const Landing = ({ page, setPage }) => {
 				{page === 'education' && <Education />}
 				{page === 'skills' && <Skills />}
 				{page === 'work' && <Work />}
+				{page === 'projects' && <Projects />}
+				{page === 'contact' && <Contact />}
 			</Box>
 		</Container>
 	);
