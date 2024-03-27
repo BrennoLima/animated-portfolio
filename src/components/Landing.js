@@ -9,6 +9,7 @@ import { FloatingMenu } from './FloatingMenu';
 import { About } from './About';
 import { Education } from './Education';
 import { Skills } from './Skills';
+import { Work } from './Work';
 
 export const Landing = ({ page, setPage }) => {
 	useEffect(() => {
@@ -47,7 +48,7 @@ export const Landing = ({ page, setPage }) => {
 			<LandingBlob />
 			<Stack
 				sx={{
-					height: '50vh',
+					height: '55vh',
 					width: '100%',
 					position: 'absolute',
 					bottom: '10vh',
@@ -83,7 +84,7 @@ export const Landing = ({ page, setPage }) => {
 						Creative UI/UX developer
 					</Typography>
 				</Box>
-				<BrennoSVG />
+				<BrennoSVG width={'25vw'} />
 			</Stack>
 			<Button
 				onClick={() => setPage('landing')}
@@ -114,6 +115,7 @@ export const Landing = ({ page, setPage }) => {
 				{page === 'about' && <About />}
 				{page === 'education' && <Education />}
 				{page === 'skills' && <Skills />}
+				{page === 'work' && <Work />}
 			</Box>
 		</Container>
 	);
