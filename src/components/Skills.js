@@ -126,6 +126,8 @@ export const Skills = () => {
 						aria-expanded={expanded[1]}
 						aria-label='show more'
 						sx={{
+							color: (theme) =>
+								theme.palette.getContrastText(theme.palette.background.paper),
 							transform: !expanded[1] ? 'rotate(0deg)' : 'rotate(180deg)',
 							transition: 'transform 0.2s linear',
 						}}
@@ -215,6 +217,8 @@ export const Skills = () => {
 						aria-expanded={expanded[0]}
 						aria-label='show more'
 						sx={{
+							color: (theme) =>
+								theme.palette.getContrastText(theme.palette.background.paper),
 							transform: !expanded[0] ? 'rotate(0deg)' : 'rotate(180deg)',
 							transition: 'transform 0.2s linear',
 						}}
@@ -294,6 +298,8 @@ export const Skills = () => {
 						aria-expanded={expanded[2]}
 						aria-label='show more'
 						sx={{
+							color: (theme) =>
+								theme.palette.getContrastText(theme.palette.background.paper),
 							transform: !expanded[2] ? 'rotate(0deg)' : 'rotate(180deg)',
 							transition: 'transform 0.2s linear',
 						}}

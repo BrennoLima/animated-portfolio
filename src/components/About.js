@@ -94,7 +94,13 @@ export const About = () => {
 					</Typography>
 					<IconButton
 						onClick={handleChat}
-						sx={{ position: 'absolute', bottom: 10, right: 10 }}
+						sx={{
+							color: (theme) =>
+								theme.palette.getContrastText(theme.palette.background.paper),
+							position: 'absolute',
+							bottom: 10,
+							right: 10,
+						}}
 					>
 						<MoreHorizIcon />
 					</IconButton>

@@ -95,6 +95,8 @@ export const Education = () => {
 						aria-expanded={expanded}
 						aria-label='show more'
 						sx={{
+							color: (theme) =>
+								theme.palette.getContrastText(theme.palette.background.paper),
 							transform: !expanded ? 'rotate(0deg)' : 'rotate(180deg)',
 							transition: 'transform 0.2s linear',
 						}}
