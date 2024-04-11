@@ -12,7 +12,7 @@ export const lightTheme = createTheme({
 			light: '#5F578A',
 		},
 		text: {
-			primary: '#B3ADDA',
+			primary: '#D4CEF8',
 			secondary: '#DCD6FF',
 		},
 		background: {

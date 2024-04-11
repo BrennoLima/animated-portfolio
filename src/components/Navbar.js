@@ -6,7 +6,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 // Components
 import { LogoSVG } from '../SVGComponents/LogoSVG';
 
-export const Navbar = ({ page, setPage, toggleMode, mode }) => {
+export const Navbar = ({ page, setPage, toggleMode, mode, isMobile }) => {
 	const navItems = [
 		'About',
 		'Education',
@@ -44,26 +44,30 @@ export const Navbar = ({ page, setPage, toggleMode, mode }) => {
 						<LogoSVG />
 					</IconButton>
 				</Grid>
-				<Grid item>
-					{navItems.map((navItem) => (
-						<Button
-							onClick={() => setPage(navItem.toLowerCase())}
-							sx={{
-								textTransform: 'none',
-								color: (theme) => {
-									if (page === navItem.toLowerCase())
-										return theme.palette.primary.main;
-									return theme.palette.text.primary;
-								},
-								'&:hover': {
-									color: (theme) => theme.palette.primary.main,
-								},
-							}}
-						>
-							{navItem}
-						</Button>
-					))}
-				</Grid>
+				{!isMobile && (
+					<Grid item>
+						{navItems.map((navItem) => (
+							<Button
+								key={navItem}
+								onClick={() => setPage(navItem.toLowerCase())}
+								sx={{
+									textTransform: 'none',
+									color: (theme) => {
+										if (page === navItem.toLowerCase())
+											return theme.palette.primary.main;
+										return theme.palette.text.primary;
+									},
+									'&:hover': {
+										color: (theme) => theme.palette.primary.main,
+									},
+								}}
+							>
+								{navItem}
+							</Button>
+						))}
+					</Grid>
+				)}
+
 				<Grid item>
 					<IconButton
 						onClick={toggleMode}

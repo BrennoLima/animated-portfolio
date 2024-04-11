@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+	darken,
 	Box,
 	Container,
 	Stack,
@@ -91,7 +92,13 @@ export const Work = () => {
 							</Typography>
 						</Stack>
 					</AccordionSummary>
-					<AccordionDetails>
+					<AccordionDetails
+						sx={{
+							pt: 1,
+							backgroundColor: (theme) =>
+								darken(theme.palette.background.paper, 0.05),
+						}}
+					>
 						<Stack gap={2}>
 							<Typography variant='body2'>
 								• Developed and maintained web applications using{' '}
@@ -137,18 +144,24 @@ export const Work = () => {
 							</Typography>
 						</Stack>
 					</AccordionSummary>
-					<AccordionDetails>
+					<AccordionDetails
+						sx={{
+							pt: 1,
+							backgroundColor: (theme) =>
+								darken(theme.palette.background.paper, 0.05),
+						}}
+					>
 						<Stack gap={2}>
 							<Typography variant='body2'>
 								• Developed and maintained the <b>frontend</b> application using
-								<b>JavaScript, React, Redux</b>
+								<b> JavaScript, React, Redux</b>
 							</Typography>
 							<Typography variant='body2'>
 								• <b>Designed</b> pages and components on <b>Figma</b>
 							</Typography>
 							<Typography variant='body2'>
 								• Managed co-op interns, assigning small tasks and doing code
-								reviews.
+								reviews
 							</Typography>
 						</Stack>
 					</AccordionDetails>
@@ -174,19 +187,25 @@ export const Work = () => {
 							</Typography>
 						</Stack>
 					</AccordionSummary>
-					<AccordionDetails>
+					<AccordionDetails
+						sx={{
+							pt: 1,
+							backgroundColor: (theme) =>
+								darken(theme.palette.background.paper, 0.05),
+						}}
+					>
 						<Stack gap={2}>
 							<Typography variant='body2'>
 								• Developed and performed <b>manual and automated tests</b>{' '}
-								cases for quality assurance.
+								cases for quality assurance
 							</Typography>
 							<Typography variant='body2'>
 								• Collaborated with developers to <b>identify and fix</b>{' '}
-								root-cause bugs.
+								root-cause bugs
 							</Typography>
 							<Typography variant='body2'>
 								• <b>Troubleshoot, debug</b>, and upgrade existing software to
-								meet client needs.
+								meet client needs
 							</Typography>
 						</Stack>
 					</AccordionDetails>

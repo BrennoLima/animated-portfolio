@@ -42,7 +42,7 @@ export const Projects = () => {
 			>
 				PROJECTS
 			</Typography>
-			<RocketSVG width='12vw' />
+			<RocketSVG width='13vw' />
 			<Box
 				sx={{
 					position: 'absolute',

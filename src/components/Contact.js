@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react';
-import { Stack, Container, Card, Typography, Link } from '@mui/material';
+import {
+	darken,
+	Stack,
+	Container,
+	Card,
+	Typography,
+	Link,
+} from '@mui/material';
 import gsap from 'gsap';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
 
 import { PhoneEmail } from '../SVGComponents/PhoneEmail';
+import LinkedIn from '../assets/SVGs/LinkedIn.svg';
+import { EmailSVG } from '../SVGComponents/EmailSVG';
 
 export const Contact = () => {
 	useEffect(() => {
@@ -51,6 +58,7 @@ export const Contact = () => {
 			>
 				<Card
 					sx={{
+						minWidth: '150px',
 						position: 'absolute',
 						right: '5%',
 						top: '30%',
@@ -59,17 +67,15 @@ export const Contact = () => {
 						px: 2,
 						color: (theme) =>
 							theme.palette.getContrastText(theme.palette.background.paper),
+						'&:hover': {
+							background: (theme) =>
+								darken(theme.palette.background.paper, 0.05),
+						},
 					}}
 					id='float-0'
 				>
 					<Stack gap={1} sx={{ alignItems: 'center' }}>
-						<LinkedInIcon
-							sx={{
-								color: '#0077B5',
-								width: '65px',
-								height: '65px',
-							}}
-						/>
+						<img src={LinkedIn} alt='LinkedIn' />
 						<Typography variant='body2'>brennocesarlima</Typography>
 					</Stack>
 				</Card>
@@ -77,6 +83,7 @@ export const Contact = () => {
 			<Link href='mailto:brennocesar@live.com' target='__blank'>
 				<Card
 					sx={{
+						minWidth: '150px',
 						position: 'absolute',
 						right: '25%',
 						top: '-5%',
@@ -89,14 +96,7 @@ export const Contact = () => {
 					id='float-1'
 				>
 					<Stack gap={1} sx={{ alignItems: 'center' }}>
-						<EmailIcon
-							sx={{
-								color: (theme) =>
-									theme.palette.getContrastText(theme.palette.background.paper),
-								width: '65px',
-								height: '65px',
-							}}
-						/>
+						<EmailSVG width='65px' />
 						<Typography variant='body2'>brennocesar@live.com</Typography>
 					</Stack>
 				</Card>

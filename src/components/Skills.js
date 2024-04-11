@@ -64,7 +64,7 @@ export const Skills = () => {
 			>
 				SKILLS
 			</Typography>
-			<ComputerSVG heigth='25vh' />
+			<ComputerSVG width='12vw' />
 			<Card
 				sx={{
 					position: 'absolute',

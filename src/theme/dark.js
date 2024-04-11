@@ -8,15 +8,15 @@ export const darkTheme = createTheme({
 			dark: '#254965',
 		},
 		secondary: {
-			main: '#000',
-			light: '#2f2f2f',
+			main: '#1c1c1c',
+			light: '#434343',
 		},
 		text: {
 			primary: '#bbbbbb',
 			secondary: '#FFF',
 		},
 		background: {
-			paper: '#212121',
+			paper: '#F1F1F1',
 		},
 	},
 	typography: {

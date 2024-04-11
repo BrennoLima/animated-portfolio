@@ -54,7 +54,7 @@ export const About = () => {
 			</Typography>
 			<Box sx={{ mt: 8 }}>
 				<Box sx={{ display: 'inline-block', textAlign: 'center' }}>
-					<TorontoSVG width='12vw' />
+					<TorontoSVG width='13vw' />
 					<Typography
 						color='text.primary'
 						variant='h6'
@@ -78,11 +78,11 @@ export const About = () => {
 				<Box
 					sx={{
 						height: '40%',
-						background: (theme) => theme.palette.text.primary,
+						background: (theme) => theme.palette.background.paper,
 						borderRadius: '1rem',
 						p: 2,
 						boxShadow: (theme) =>
-							`-12px 12px 0px ${theme.palette.text.primary}40`,
+							`-12px 12px 0px ${theme.palette.background.paper}40`,
 						display: 'flex',
 						alignItems: 'center',
 						justifyContent: 'center',

@@ -5,8 +5,13 @@ import { Navbar } from './components/Navbar';
 import { Landing } from './components/Landing';
 import { lightTheme } from './theme/light';
 import { darkTheme } from './theme/dark';
+import useWindowDimensions from './hooks/useWindowDimensions';
+import { MobileFriendlySharp } from '@mui/icons-material';
+import { MobileLanding } from './components/MobileLanding';
 
 function App() {
+	const { width } = useWindowDimensions();
+	const isMobile = width < 1024;
 	const [page, setPage] = useState('landing');
 	const [mode, setMode] = useState('light');
 	const theme = useMemo(
@@ -46,8 +51,13 @@ function App() {
 					setPage={setPage}
 					mode={mode}
 					toggleMode={toggleMode}
+					isMobile={isMobile}
 				/>
-				<Landing page={page} setPage={setPage} />
+				{isMobile ? (
+					<MobileLanding page={page} setPage={setPage} />
+				) : (
+					<Landing page={page} setPage={setPage} />
+				)}
 			</Box>
 		</ThemeProvider>
 	);

@@ -60,7 +60,7 @@ export const Education = () => {
 			>
 				EDUCATION
 			</Typography>
-			<SchoolSVG height='25vh' />
+			<SchoolSVG width='15vw' />
 			<Card
 				sx={{
 					position: 'absolute',

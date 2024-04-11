@@ -1,11 +1,11 @@
 import { useTheme } from '@emotion/react';
 import React from 'react';
 
-export const SchoolSVG = ({ height }) => {
+export const SchoolSVG = ({ width }) => {
 	const theme = useTheme();
 	return (
 		<svg
-			height={height}
+			width={width}
 			preserveAspectRatio='xMidYMid meet'
 			viewBox='0 0 391 329'
 			fill='none'
