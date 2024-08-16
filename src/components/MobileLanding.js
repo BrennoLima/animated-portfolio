@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { LandingBlob } from '../SVGComponents/LandingBlob';
 import { BrennoSVG } from '../SVGComponents/BrennoSVG';
 
-export const MobileLanding = ({ page, setPage }) => {
+export const MobileLanding = ({ page }) => {
 	useEffect(() => {
 		if (page !== 'landing') floatLeft();
 		else back();
@@ -38,6 +38,22 @@ export const MobileLanding = ({ page, setPage }) => {
 				mt: navbar_height,
 			}}
 		>
+			<Box
+				sx={{
+					mx: 4,
+					position: 'absolute',
+					top: '10%',
+					background: (theme) => theme.palette.background.paper,
+					borderRadius: '1rem',
+					p: 2,
+					boxShadow: (theme) =>
+						`-12px 12px 0px ${theme.palette.background.paper}40`,
+				}}
+			>
+				<Typography align='center' variant='h6'>
+					Please visit this website using a desktop
+				</Typography>
+			</Box>
 			<LandingBlob />
 			<Stack
 				sx={{
@@ -74,7 +90,7 @@ export const MobileLanding = ({ page, setPage }) => {
 						fontWeight='700'
 						variant='h6'
 					>
-						Creative UI/UX developer
+						Frontend Developer
 					</Typography>
 				</Box>
 				<BrennoSVG width='25vw' />

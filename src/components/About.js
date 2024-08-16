@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Container, IconButton, Typography } from '@mui/material';
+import { Link, Box, Container, IconButton, Typography } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import gsap from 'gsap';
@@ -10,9 +10,9 @@ import { ResumeSVG } from '../SVGComponents/ResumeSVG';
 export const About = () => {
 	const [activeChat, setActiveChat] = useState(0);
 	const ALL_CHATS = [
-		'Nice to meet you! I am Brenno Lima, a frontend web developer.',
-		'Later on I will write something here',
-		'but now, I wanna code this website',
+		'Nice to meet you! I am a creative Frontend web developer',
+		'that ocasionally creates some cool designs, like this site!',
+		'Download my resume and get to know more about my skills',
 	];
 
 	const handleChat = () => {
@@ -129,6 +129,9 @@ export const About = () => {
 				/>
 			</Box>
 			<Box
+				download
+				component={Link}
+				href='/BrennoLima2024.pdf'
 				sx={{
 					position: 'absolute',
 					right: '5vw',

@@ -6,7 +6,6 @@ import { Landing } from './components/Landing';
 import { lightTheme } from './theme/light';
 import { darkTheme } from './theme/dark';
 import useWindowDimensions from './hooks/useWindowDimensions';
-import { MobileFriendlySharp } from '@mui/icons-material';
 import { MobileLanding } from './components/MobileLanding';
 
 function App() {
