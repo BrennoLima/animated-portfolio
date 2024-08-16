@@ -83,7 +83,7 @@ export const Landing = ({ page, setPage }) => {
 						fontWeight='700'
 						variant='h6'
 					>
-						Creative UI/UX developer
+						Frontend Developer
 					</Typography>
 				</Box>
 				<BrennoSVG width={'25vw'} />

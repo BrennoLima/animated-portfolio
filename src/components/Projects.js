@@ -8,21 +8,18 @@ import {
 	Typography,
 	Collapse,
 	Grid,
+	Link,
 	IconButton,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import BrennoNFT from '../assets/SVGs/BrennoNFT.svg';
+import Igloo from '../assets/SVGs/igloo-logo.svg';
 import gsap from 'gsap';
 
 import { RocketSVG } from '../SVGComponents/RocketSVG';
 
 export const Projects = () => {
-	const [expanded, setExpanded] = useState([true, false, false]);
-
-	const handleExpandClick = (index) => {
-		var newState = [false, false, false];
-		newState[index] = !expanded[index];
-		setExpanded(newState);
-	};
+	const [expanded, setExpanded] = useState(true);
 
 	useEffect(() => {
 		let float;
@@ -64,9 +61,50 @@ export const Projects = () => {
 			<RocketSVG width='13vw' />
 			<Card
 				sx={{
+					p: 1,
 					position: 'absolute',
-					right: '-5%',
-					bottom: '15%',
+					right: '35%',
+					top: '-10%',
+					borderRadius: 1,
+					width: '250px',
+					color: (theme) =>
+						theme.palette.getContrastText(theme.palette.background.paper),
+				}}
+				id='float-0'
+			>
+				<Stack sx={{ alignItems: 'center' }}>
+					<Box
+						sx={{
+							width: '150px',
+							background: (theme) => theme.palette.background.paper,
+							display: 'flex',
+							justifyContent: 'center',
+							py: 1,
+						}}
+					>
+						<img src={Igloo} alt='igloo-software' />
+					</Box>
+					<Divider flexItem />
+					<Box sx={{ pt: 1 }}>
+						<Typography
+							component={Link}
+							href='https://www.igloosoftware.com/'
+							target='__blank'
+							align='center'
+							variant='subtitle2'
+							fontWeight={600}
+							sx={{ color: 'black', textDecorationColor: 'black' }}
+						>
+							Igloo Software (Professional)
+						</Typography>
+					</Box>
+				</Stack>
+			</Card>
+			<Card
+				sx={{
+					position: 'absolute',
+					right: '5%',
+					bottom: '50%',
 					borderRadius: 1,
 					width: '250px',
 					color: (theme) =>
@@ -84,18 +122,24 @@ export const Projects = () => {
 							py: 1,
 						}}
 					>
-						<img src={'Github'} alt='github' />
+						<img src={BrennoNFT} alt='BL-projects' />
 					</Box>
 					<Divider flexItem />
 					<Box sx={{ pt: 1 }}>
 						<Typography
+							component={Link}
+							href='https://main.d2b35kk5cgiv9g.amplifyapp.com/'
+							target='__blank'
 							align='center'
 							variant='subtitle2'
 							fontWeight={600}
-						></Typography>
+							sx={{ color: 'black', textDecorationColor: 'black' }}
+						>
+							Small projects
+						</Typography>
 					</Box>
 					<Collapse
-						in={expanded[2]}
+						in={expanded}
 						timeout='auto'
 						unmountOnExit
 						sx={{ width: '100%' }}
@@ -107,36 +151,65 @@ export const Projects = () => {
 							justifyContent='space-around'
 							sx={{
 								py: 2,
-								px: 2,
+								px: 1,
 							}}
 							gap={2}
 						>
 							<Grid item sx={{ px: 1 }}>
-								<Typography variant='caption'>GitHub</Typography>
+								<Typography
+									component={Link}
+									href='https://main.d2b35kk5cgiv9g.amplifyapp.com/rafa-arts'
+									target='__blank'
+									variant='caption'
+									sx={{ color: 'black', textDecorationColor: 'black' }}
+								>
+									RafaArts
+								</Typography>
 							</Grid>
 							<Grid item sx={{ px: 1 }}>
-								<Typography variant='caption'>Jira</Typography>
+								<Typography
+									component={Link}
+									href='https://main.d2b35kk5cgiv9g.amplifyapp.com/luhoca-designs'
+									target='__blank'
+									variant='caption'
+									sx={{ color: 'black', textDecorationColor: 'black' }}
+								>
+									HocaDesigns
+								</Typography>
 							</Grid>
 							<Grid item sx={{ px: 1 }}>
-								<Typography variant='caption'>Agile</Typography>
+								<Typography
+									component={Link}
+									href='https://main.d2b35kk5cgiv9g.amplifyapp.com/mortgage-calculator'
+									target='__blank'
+									variant='caption'
+									sx={{ color: 'black', textDecorationColor: 'black' }}
+								>
+									RBC mortgage
+								</Typography>
 							</Grid>
 							<Grid item sx={{ px: 1 }}>
-								<Typography variant='caption'>VS Code</Typography>
-							</Grid>
-							<Grid item sx={{ px: 1 }}>
-								<Typography variant='caption'>Postman</Typography>
+								<Typography
+									component={Link}
+									href='https://main.d2b35kk5cgiv9g.amplifyapp.com/old-bank'
+									target='__blank'
+									variant='caption'
+									sx={{ color: 'black', textDecorationColor: 'black' }}
+								>
+									Old Bank cafe
+								</Typography>
 							</Grid>
 						</Grid>
 					</Collapse>
 					<IconButton
 						size='small'
-						onClick={() => handleExpandClick(2)}
-						aria-expanded={expanded[2]}
+						onClick={() => setExpanded((prev) => !prev)}
+						aria-expanded={expanded}
 						aria-label='show more'
 						sx={{
 							color: (theme) =>
 								theme.palette.getContrastText(theme.palette.background.paper),
-							transform: !expanded[2] ? 'rotate(0deg)' : 'rotate(180deg)',
+							transform: !expanded ? 'rotate(0deg)' : 'rotate(180deg)',
 							transition: 'transform 0.2s linear',
 						}}
 					>
