@@ -131,7 +131,7 @@ export const About = () => {
 			<Box
 				download
 				component={Link}
-				href='/BrennoLima2024.pdf'
+				href={process.env.PUBLIC_URL + '/BrennoLima2025.pdf'}
 				sx={{
 					position: 'absolute',
 					right: '5vw',
